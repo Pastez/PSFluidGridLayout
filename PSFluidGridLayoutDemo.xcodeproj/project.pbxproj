@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BC273245183F640500AD06DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC273244183F640500AD06DA /* Foundation.framework */; };
+		BC273247183F640500AD06DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC273246183F640500AD06DA /* CoreGraphics.framework */; };
+		BC273249183F640500AD06DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC273248183F640500AD06DA /* UIKit.framework */; };
+		BC27324F183F640500AD06DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC27324D183F640500AD06DA /* InfoPlist.strings */; };
+		BC273251183F640500AD06DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC273250183F640500AD06DA /* main.m */; };
+		BC273255183F640500AD06DA /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC273254183F640500AD06DA /* PSAppDelegate.m */; };
+		BC273258183F640500AD06DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC273256183F640500AD06DA /* Main.storyboard */; };
+		BC27325E183F640500AD06DA /* PSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC27325D183F640500AD06DA /* PSViewController.m */; };
+		BC273260183F640500AD06DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC27325F183F640500AD06DA /* Images.xcassets */; };
+		BC273267183F640600AD06DA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC273266183F640600AD06DA /* XCTest.framework */; };
+		BC273268183F640600AD06DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC273244183F640500AD06DA /* Foundation.framework */; };
+		BC273269183F640600AD06DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC273248183F640500AD06DA /* UIKit.framework */; };
+		BC273271183F640600AD06DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC27326F183F640600AD06DA /* InfoPlist.strings */; };
+		BC273273183F640600AD06DA /* PSFluidGridLayoutDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC273272183F640600AD06DA /* PSFluidGridLayoutDemoTests.m */; };
+		BC273283183F646200AD06DA /* PSFluidGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BC273281183F646200AD06DA /* PSFluidGridLayout.m */; };
+		BC273295183F710700AD06DA /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC273285183F710700AD06DA /* 1.jpg */; };
+		BC273296183F710700AD06DA /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC273286183F710700AD06DA /* 10.jpg */; };
+		BC273297183F710700AD06DA /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC273287183F710700AD06DA /* 11.jpg */; };
+		BC273298183F710700AD06DA /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC273288183F710700AD06DA /* 12.jpg */; };
+		BC273299183F710700AD06DA /* 13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC273289183F710700AD06DA /* 13.jpg */; };
+		BC27329A183F710700AD06DA /* 14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC27328A183F710700AD06DA /* 14.jpg */; };
+		BC27329B183F710700AD06DA /* 15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC27328B183F710700AD06DA /* 15.jpg */; };
+		BC27329C183F710700AD06DA /* 16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC27328C183F710700AD06DA /* 16.jpg */; };
+		BC27329D183F710700AD06DA /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC27328D183F710700AD06DA /* 2.jpg */; };
+		BC27329E183F710700AD06DA /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC27328E183F710700AD06DA /* 3.gif */; };
+		BC27329F183F710700AD06DA /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC27328F183F710700AD06DA /* 4.jpg */; };
+		BC2732A0183F710700AD06DA /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC273290183F710700AD06DA /* 5.jpg */; };
+		BC2732A1183F710700AD06DA /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC273291183F710700AD06DA /* 6.jpg */; };
+		BC2732A2183F710700AD06DA /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC273292183F710700AD06DA /* 7.jpg */; };
+		BC2732A3183F710700AD06DA /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC273293183F710700AD06DA /* 8.jpg */; };
+		BC2732A4183F710700AD06DA /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC273294183F710700AD06DA /* 9.jpg */; };
+		BC2732A7183F747600AD06DA /* PSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2732A6183F747600AD06DA /* PSCollectionViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC27326A183F640600AD06DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC273239183F640500AD06DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC273240183F640500AD06DA;
+			remoteInfo = PSFluidGridLayoutDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BC273241183F640500AD06DA /* PSFluidGridLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSFluidGridLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC273244183F640500AD06DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BC273246183F640500AD06DA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BC273248183F640500AD06DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BC27324C183F640500AD06DA /* PSFluidGridLayoutDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PSFluidGridLayoutDemo-Info.plist"; sourceTree = "<group>"; };
+		BC27324E183F640500AD06DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BC273250183F640500AD06DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC273252183F640500AD06DA /* PSFluidGridLayoutDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PSFluidGridLayoutDemo-Prefix.pch"; sourceTree = "<group>"; };
+		BC273253183F640500AD06DA /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
+		BC273254183F640500AD06DA /* PSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAppDelegate.m; sourceTree = "<group>"; };
+		BC273257183F640500AD06DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC27325C183F640500AD06DA /* PSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSViewController.h; sourceTree = "<group>"; };
+		BC27325D183F640500AD06DA /* PSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSViewController.m; sourceTree = "<group>"; };
+		BC27325F183F640500AD06DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BC273265183F640600AD06DA /* PSFluidGridLayoutDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSFluidGridLayoutDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC273266183F640600AD06DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BC27326E183F640600AD06DA /* PSFluidGridLayoutDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PSFluidGridLayoutDemoTests-Info.plist"; sourceTree = "<group>"; };
+		BC273270183F640600AD06DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BC273272183F640600AD06DA /* PSFluidGridLayoutDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSFluidGridLayoutDemoTests.m; sourceTree = "<group>"; };
+		BC273280183F646200AD06DA /* PSFluidGridLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFluidGridLayout.h; sourceTree = "<group>"; };
+		BC273281183F646200AD06DA /* PSFluidGridLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSFluidGridLayout.m; sourceTree = "<group>"; };
+		BC273285183F710700AD06DA /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		BC273286183F710700AD06DA /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
+		BC273287183F710700AD06DA /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11.jpg; sourceTree = "<group>"; };
+		BC273288183F710700AD06DA /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
+		BC273289183F710700AD06DA /* 13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 13.jpg; sourceTree = "<group>"; };
+		BC27328A183F710700AD06DA /* 14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 14.jpg; sourceTree = "<group>"; };
+		BC27328B183F710700AD06DA /* 15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15.jpg; sourceTree = "<group>"; };
+		BC27328C183F710700AD06DA /* 16.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 16.jpg; sourceTree = "<group>"; };
+		BC27328D183F710700AD06DA /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		BC27328E183F710700AD06DA /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
+		BC27328F183F710700AD06DA /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		BC273290183F710700AD06DA /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		BC273291183F710700AD06DA /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		BC273292183F710700AD06DA /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
+		BC273293183F710700AD06DA /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
+		BC273294183F710700AD06DA /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
+		BC2732A5183F747600AD06DA /* PSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionViewCell.h; sourceTree = "<group>"; };
+		BC2732A6183F747600AD06DA /* PSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC27323E183F640500AD06DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC273247183F640500AD06DA /* CoreGraphics.framework in Frameworks */,
+				BC273249183F640500AD06DA /* UIKit.framework in Frameworks */,
+				BC273245183F640500AD06DA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC273262183F640600AD06DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC273267183F640600AD06DA /* XCTest.framework in Frameworks */,
+				BC273269183F640600AD06DA /* UIKit.framework in Frameworks */,
+				BC273268183F640600AD06DA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC273238183F640500AD06DA = {
+			isa = PBXGroup;
+			children = (
+				BC27324A183F640500AD06DA /* PSFluidGridLayoutDemo */,
+				BC27326C183F640600AD06DA /* PSFluidGridLayoutDemoTests */,
+				BC273243183F640500AD06DA /* Frameworks */,
+				BC273242183F640500AD06DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC273242183F640500AD06DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC273241183F640500AD06DA /* PSFluidGridLayoutDemo.app */,
+				BC273265183F640600AD06DA /* PSFluidGridLayoutDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC273243183F640500AD06DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC273244183F640500AD06DA /* Foundation.framework */,
+				BC273246183F640500AD06DA /* CoreGraphics.framework */,
+				BC273248183F640500AD06DA /* UIKit.framework */,
+				BC273266183F640600AD06DA /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC27324A183F640500AD06DA /* PSFluidGridLayoutDemo */ = {
+			isa = PBXGroup;
+			children = (
+				BC27327C183F646200AD06DA /* PSFluidGridLayout */,
+				BC273253183F640500AD06DA /* PSAppDelegate.h */,
+				BC273254183F640500AD06DA /* PSAppDelegate.m */,
+				BC273256183F640500AD06DA /* Main.storyboard */,
+				BC27325C183F640500AD06DA /* PSViewController.h */,
+				BC27325D183F640500AD06DA /* PSViewController.m */,
+				BC2732A5183F747600AD06DA /* PSCollectionViewCell.h */,
+				BC2732A6183F747600AD06DA /* PSCollectionViewCell.m */,
+				BC27325F183F640500AD06DA /* Images.xcassets */,
+				BC27324B183F640500AD06DA /* Supporting Files */,
+			);
+			path = PSFluidGridLayoutDemo;
+			sourceTree = "<group>";
+		};
+		BC27324B183F640500AD06DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC273284183F710700AD06DA /* Images */,
+				BC27324C183F640500AD06DA /* PSFluidGridLayoutDemo-Info.plist */,
+				BC27324D183F640500AD06DA /* InfoPlist.strings */,
+				BC273250183F640500AD06DA /* main.m */,
+				BC273252183F640500AD06DA /* PSFluidGridLayoutDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC27326C183F640600AD06DA /* PSFluidGridLayoutDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC273272183F640600AD06DA /* PSFluidGridLayoutDemoTests.m */,
+				BC27326D183F640600AD06DA /* Supporting Files */,
+			);
+			path = PSFluidGridLayoutDemoTests;
+			sourceTree = "<group>";
+		};
+		BC27326D183F640600AD06DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC27326E183F640600AD06DA /* PSFluidGridLayoutDemoTests-Info.plist */,
+				BC27326F183F640600AD06DA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC27327C183F646200AD06DA /* PSFluidGridLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BC273280183F646200AD06DA /* PSFluidGridLayout.h */,
+				BC273281183F646200AD06DA /* PSFluidGridLayout.m */,
+			);
+			path = PSFluidGridLayout;
+			sourceTree = SOURCE_ROOT;
+		};
+		BC273284183F710700AD06DA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BC273285183F710700AD06DA /* 1.jpg */,
+				BC273286183F710700AD06DA /* 10.jpg */,
+				BC273287183F710700AD06DA /* 11.jpg */,
+				BC273288183F710700AD06DA /* 12.jpg */,
+				BC273289183F710700AD06DA /* 13.jpg */,
+				BC27328A183F710700AD06DA /* 14.jpg */,
+				BC27328B183F710700AD06DA /* 15.jpg */,
+				BC27328C183F710700AD06DA /* 16.jpg */,
+				BC27328D183F710700AD06DA /* 2.jpg */,
+				BC27328E183F710700AD06DA /* 3.gif */,
+				BC27328F183F710700AD06DA /* 4.jpg */,
+				BC273290183F710700AD06DA /* 5.jpg */,
+				BC273291183F710700AD06DA /* 6.jpg */,
+				BC273292183F710700AD06DA /* 7.jpg */,
+				BC273293183F710700AD06DA /* 8.jpg */,
+				BC273294183F710700AD06DA /* 9.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC273240183F640500AD06DA /* PSFluidGridLayoutDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC273276183F640600AD06DA /* Build configuration list for PBXNativeTarget "PSFluidGridLayoutDemo" */;
+			buildPhases = (
+				BC27323D183F640500AD06DA /* Sources */,
+				BC27323E183F640500AD06DA /* Frameworks */,
+				BC27323F183F640500AD06DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PSFluidGridLayoutDemo;
+			productName = PSFluidGridLayoutDemo;
+			productReference = BC273241183F640500AD06DA /* PSFluidGridLayoutDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC273264183F640600AD06DA /* PSFluidGridLayoutDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC273279183F640600AD06DA /* Build configuration list for PBXNativeTarget "PSFluidGridLayoutDemoTests" */;
+			buildPhases = (
+				BC273261183F640600AD06DA /* Sources */,
+				BC273262183F640600AD06DA /* Frameworks */,
+				BC273263183F640600AD06DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC27326B183F640600AD06DA /* PBXTargetDependency */,
+			);
+			name = PSFluidGridLayoutDemoTests;
+			productName = PSFluidGridLayoutDemoTests;
+			productReference = BC273265183F640600AD06DA /* PSFluidGridLayoutDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC273239183F640500AD06DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PS;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Tomasz Kwolek Pastez.com 2013";
+				TargetAttributes = {
+					BC273264183F640600AD06DA = {
+						TestTargetID = BC273240183F640500AD06DA;
+					};
+				};
+			};
+			buildConfigurationList = BC27323C183F640500AD06DA /* Build configuration list for PBXProject "PSFluidGridLayoutDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC273238183F640500AD06DA;
+			productRefGroup = BC273242183F640500AD06DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC273240183F640500AD06DA /* PSFluidGridLayoutDemo */,
+				BC273264183F640600AD06DA /* PSFluidGridLayoutDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC27323F183F640500AD06DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC27329A183F710700AD06DA /* 14.jpg in Resources */,
+				BC273296183F710700AD06DA /* 10.jpg in Resources */,
+				BC273299183F710700AD06DA /* 13.jpg in Resources */,
+				BC273260183F640500AD06DA /* Images.xcassets in Resources */,
+				BC273298183F710700AD06DA /* 12.jpg in Resources */,
+				BC27329B183F710700AD06DA /* 15.jpg in Resources */,
+				BC2732A0183F710700AD06DA /* 5.jpg in Resources */,
+				BC27329D183F710700AD06DA /* 2.jpg in Resources */,
+				BC2732A4183F710700AD06DA /* 9.jpg in Resources */,
+				BC27329E183F710700AD06DA /* 3.gif in Resources */,
+				BC27329F183F710700AD06DA /* 4.jpg in Resources */,
+				BC2732A2183F710700AD06DA /* 7.jpg in Resources */,
+				BC2732A1183F710700AD06DA /* 6.jpg in Resources */,
+				BC2732A3183F710700AD06DA /* 8.jpg in Resources */,
+				BC273295183F710700AD06DA /* 1.jpg in Resources */,
+				BC27329C183F710700AD06DA /* 16.jpg in Resources */,
+				BC273297183F710700AD06DA /* 11.jpg in Resources */,
+				BC273258183F640500AD06DA /* Main.storyboard in Resources */,
+				BC27324F183F640500AD06DA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC273263183F640600AD06DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC273271183F640600AD06DA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC27323D183F640500AD06DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC273251183F640500AD06DA /* main.m in Sources */,
+				BC27325E183F640500AD06DA /* PSViewController.m in Sources */,
+				BC273283183F646200AD06DA /* PSFluidGridLayout.m in Sources */,
+				BC273255183F640500AD06DA /* PSAppDelegate.m in Sources */,
+				BC2732A7183F747600AD06DA /* PSCollectionViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC273261183F640600AD06DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC273273183F640600AD06DA /* PSFluidGridLayoutDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC27326B183F640600AD06DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC273240183F640500AD06DA /* PSFluidGridLayoutDemo */;
+			targetProxy = BC27326A183F640600AD06DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC27324D183F640500AD06DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC27324E183F640500AD06DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BC273256183F640500AD06DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC273257183F640500AD06DA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BC27326F183F640600AD06DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC273270183F640600AD06DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC273274183F640600AD06DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC273275183F640600AD06DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC273277183F640600AD06DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PSFluidGridLayoutDemo/PSFluidGridLayoutDemo-Prefix.pch";
+				INFOPLIST_FILE = "PSFluidGridLayoutDemo/PSFluidGridLayoutDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BC273278183F640600AD06DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PSFluidGridLayoutDemo/PSFluidGridLayoutDemo-Prefix.pch";
+				INFOPLIST_FILE = "PSFluidGridLayoutDemo/PSFluidGridLayoutDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BC27327A183F640600AD06DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PSFluidGridLayoutDemo.app/PSFluidGridLayoutDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PSFluidGridLayoutDemo/PSFluidGridLayoutDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PSFluidGridLayoutDemoTests/PSFluidGridLayoutDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BC27327B183F640600AD06DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PSFluidGridLayoutDemo.app/PSFluidGridLayoutDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PSFluidGridLayoutDemo/PSFluidGridLayoutDemo-Prefix.pch";
+				INFOPLIST_FILE = "PSFluidGridLayoutDemoTests/PSFluidGridLayoutDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC27323C183F640500AD06DA /* Build configuration list for PBXProject "PSFluidGridLayoutDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC273274183F640600AD06DA /* Debug */,
+				BC273275183F640600AD06DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC273276183F640600AD06DA /* Build configuration list for PBXNativeTarget "PSFluidGridLayoutDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC273277183F640600AD06DA /* Debug */,
+				BC273278183F640600AD06DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BC273279183F640600AD06DA /* Build configuration list for PBXNativeTarget "PSFluidGridLayoutDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC27327A183F640600AD06DA /* Debug */,
+				BC27327B183F640600AD06DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC273239183F640500AD06DA /* Project object */;
+}
