@@ -3,7 +3,7 @@ PSFluidGridLayout
 
 Fluid Grid Layout for UICollectionView
 
-![image](https://github.com/Pastez/PSFluidGridLayout/blob/master/assets/preview.gif)
+![image](https://raw.github.com/Pastez/PSFluidGridLayout/master/assets/preview.gif)
 
 
 ## Installation
