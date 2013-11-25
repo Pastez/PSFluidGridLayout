@@ -102,6 +102,11 @@
     }];
 }
 
+- (void)invalidate:(id)sender
+{
+    [self.layout invalidateLayout];
+}
+
 - (void)removeItem:(id)sender
 {
     if( _images.count <= 1 ) return;

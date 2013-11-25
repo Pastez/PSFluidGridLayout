@@ -48,6 +48,12 @@ Good place to see how to use it is demo project *(PSFluidGridLayoutDemo)*.
 
 5. Create required delegate method that shold returns item height *(when direction is set to UICollectionViewScrollDirectionVertical)* or width *(when direction is UICollectionViewScrollDirectionHorizontal)*.
 
+#### Other Options
+
+__```topBottomFixed```__
+
+If you want to keep top and bottom of columns keep unfixed when offset in bigger or smaller than content size set ```topBottomFixed``` to __NO__.
+
 ## License
 
 The MIT License (MIT)

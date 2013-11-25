@@ -76,6 +76,7 @@
     self.lastScrollPrc          = 0;
     
     self.constDimension         = 250;
+    self.topBottomFixed         = YES;
     self.direction              = UICollectionViewScrollDirectionVertical;
     self.itemInsets             = UIEdgeInsetsMake(1.0f, 1.0f, 1.0f, 1.0f);
 }
@@ -333,6 +334,11 @@
         prc = offset / ([self collectionViewContentSize].width - CGRectGetWidth(self.collectionView.frame)
                         + self.collectionView.contentInset.right + self.collectionView.contentInset.left);
     }
+    
+    if (_topBottomFixed && (prc < 0 || prc > 1 )) {
+        prc = prc < 0 ? 0 : 1;
+    }
+    
     [self onCollectionViewScroll:prc];
     
     return YES;

@@ -63,6 +63,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ivP-oP-tcS"/>
+                                    <barButtonItem title="Invalidate" id="GF2-sY-a0D"/>
                                     <barButtonItem title="Remove" id="Nfm-mM-fhs">
                                         <connections>
                                             <action selector="removeItem:" destination="vXZ-lx-hvc" id="40f-sT-tjT"/>

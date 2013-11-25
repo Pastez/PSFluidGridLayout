@@ -36,13 +36,20 @@
 
 /** Sets delegate for layout. Delegate object must conform to PSFluidGridLayoutDelegate protocol */
 @property (assign,nonatomic) IBOutlet id<PSFluidGridLayoutDelegate> delegate;
+
 /** The scroll direction of the grid. */
 @property (assign,nonatomic) UICollectionViewScrollDirection direction;
+
 /** The item insets. */
 @property (readwrite,nonatomic) UIEdgeInsets itemInsets;
+
 /** Constant dimension of items. If layout direction is set to UICollectionViewScrollDirectionVertical
  * this value controlls item width, or height if direction is set to UICollectionViewScrollDirectionHorizontal
  */
 @property (readwrite,nonatomic) CGFloat constDimension;
+
+/** Keeps beging and ending of each column fixed to the same position if
+ content offset is smaller on bigger then content size */
+@property (readwrite,nonatomic) BOOL topBottomFixed;
 
 @end
