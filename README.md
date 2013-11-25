@@ -54,6 +54,10 @@ __```topBottomFixed```__
 
 If you want to keep top and bottom of columns keep unfixed when offset in bigger or smaller than content size set ```topBottomFixed``` to __NO__.
 
+## Demo image assets
+
+Demo app uses images form [Aleksandra Kwolek](http://www.kwolek.eu) website.
+
 ## License
 
 The MIT License (MIT)
