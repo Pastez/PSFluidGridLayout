@@ -57,16 +57,25 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Add" id="7F7-8n-oyG">
+                                    <barButtonItem title="+" id="7F7-8n-oyG">
                                         <connections>
                                             <action selector="addItem:" destination="vXZ-lx-hvc" id="kJd-CG-WxJ"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ivP-oP-tcS"/>
-                                    <barButtonItem title="Invalidate" id="GF2-sY-a0D"/>
-                                    <barButtonItem title="Remove" id="Nfm-mM-fhs">
+                                    <barButtonItem title="-" id="Nfm-mM-fhs">
                                         <connections>
                                             <action selector="removeItem:" destination="vXZ-lx-hvc" id="40f-sT-tjT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Translate" id="GF2-sY-a0D">
+                                        <connections>
+                                            <action selector="translate:" destination="vXZ-lx-hvc" id="zmw-xG-wxt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ivP-oP-tcS"/>
+                                    <barButtonItem title="Artist Site" id="bkp-om-ag3">
+                                        <connections>
+                                            <action selector="artistSite:" destination="vXZ-lx-hvc" id="I3c-s3-vWc"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

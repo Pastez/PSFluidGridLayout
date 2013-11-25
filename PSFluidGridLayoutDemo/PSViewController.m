@@ -26,8 +26,9 @@
 #import "PSFluidGridLayout.h"
 #import "PSCollectionViewCell.h"
 
-#define ITEM_CONST_DIMENSION        250.0
-#define SCROLL_DIRECTION            UICollectionViewScrollDirectionVertical
+#define ITEM_CONST_DIMENSION_VERTICAL       250.0
+#define ITEM_CONST_DIMENSION_HORIZONTAL     220.0
+#define SCROLL_DIRECTION                    UICollectionViewScrollDirectionVertical
 //#define SCROLL_DIRECTION            UICollectionViewScrollDirectionHorizontal
 
 @interface PSViewController () <PSFluidGridLayoutDelegate,UICollectionViewDataSource>
@@ -50,7 +51,7 @@
     self.collectionView.contentInset = UIEdgeInsetsMake(20, 6, 50, 0);
     
     self.layout = (id)self.collectionView.collectionViewLayout;
-    self.layout.constDimension = ITEM_CONST_DIMENSION;
+    self.layout.constDimension = ITEM_CONST_DIMENSION_VERTICAL;
     self.layout.direction = SCROLL_DIRECTION;
     self.layout.itemInsets = UIEdgeInsetsMake(1, 1, 1, 1);
     self.layout.delegate = self;
@@ -102,11 +103,6 @@
     }];
 }
 
-- (void)invalidate:(id)sender
-{
-    [self.layout invalidateLayout];
-}
-
 - (void)removeItem:(id)sender
 {
     if( _images.count <= 1 ) return;
@@ -122,6 +118,22 @@
     }];
 }
 
+- (void)translate:(id)sender
+{
+    PSFluidGridLayout *newLayout = [[PSFluidGridLayout alloc] init];
+    newLayout.direction = _layout.direction == UICollectionViewScrollDirectionVertical ? UICollectionViewScrollDirectionHorizontal : UICollectionViewScrollDirectionVertical;
+    newLayout.constDimension = newLayout.direction == UICollectionViewScrollDirectionVertical ? ITEM_CONST_DIMENSION_VERTICAL : ITEM_CONST_DIMENSION_HORIZONTAL;
+    newLayout.itemInsets = UIEdgeInsetsMake(1, 1, 1, 1);
+    newLayout.delegate = self;
+    [_collectionView setCollectionViewLayout:newLayout animated:YES];
+    self.layout = newLayout;
+}
+
+- (void)artistSite:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.kwolek.eu"]];
+}
+
 #pragma mark - PSFluidGridLayout Delegate
 
 - (CGFloat)fluidLayout:(PSFluidGridLayout *)layout variableDimensionForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -129,13 +141,13 @@
     
     UIImage *image = [UIImage imageWithContentsOfFile:_images[indexPath.row]];
     float ratio;
-    if (SCROLL_DIRECTION == UICollectionViewScrollDirectionVertical) {
+    if (layout.direction == UICollectionViewScrollDirectionVertical) {
         ratio = image.size.width / image.size.height;
     }else
     {
         ratio = image.size.height / image.size.width;
     }
-    return ITEM_CONST_DIMENSION / ratio;
+    return layout.constDimension / ratio;
 }
 
 #pragma mark - UICollectionViewDataSource

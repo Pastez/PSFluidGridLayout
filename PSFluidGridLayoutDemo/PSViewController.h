@@ -29,7 +29,8 @@
 @property (assign,nonatomic) IBOutlet UICollectionView *collectionView;
 
 - (IBAction)addItem:(id)sender;
-- (IBAction)invalidate:(id)sender;
 - (IBAction)removeItem:(id)sender;
+- (IBAction)translate:(id)sender;
+- (IBAction)artistSite:(id)sender;
 
 @end
