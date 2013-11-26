@@ -48,6 +48,9 @@
 
 @property (readwrite,nonatomic) NSInteger itemCount;
 @property (readwrite,nonatomic) NSInteger lastItemCount;
+
+@property (readwrite,nonatomic) UICollectionViewScrollDirection lastDirection;
+@property (readwrite,nonatomic) PSFluidGridLayoutSortPriority lastSortPriority;
 @property (readwrite,nonatomic) CGSize lastSize;
 @property (readwrite,nonatomic) CGFloat lastScrollPrc;
 
@@ -74,24 +77,31 @@
     self.itemCount              = 0;
     self.lastItemCount          = 0;
     self.lastScrollPrc          = 0;
+    self.lastDirection          = UICollectionViewScrollDirectionVertical;
+    self.lastSortPriority       = PSFluidGridLayoutSortPriorityColumnSize;
     
     self.constDimension         = 250;
     self.topBottomFixed         = YES;
-    self.direction              = UICollectionViewScrollDirectionVertical;
     self.itemInsets             = UIEdgeInsetsMake(1.0f, 1.0f, 1.0f, 1.0f);
+    self.direction              = _lastDirection;
+    self.sortPriority           = _lastSortPriority;
 }
 
 - (void)prepareLayout
 {
     [super prepareLayout];
     
-    if (([self.collectionView numberOfItemsInSection:0] == _lastItemCount || [self.collectionView numberOfItemsInSection:0] == 0 )
-        && (_lastSize.width == self.collectionView.bounds.size.width && _lastSize.height == self.collectionView.bounds.size.height)) {
+        if ([self.collectionView numberOfItemsInSection:0] == _lastItemCount &&
+        (_lastSize.width == self.collectionView.bounds.size.width && _lastSize.height == self.collectionView.bounds.size.height) &&
+            _lastDirection == _direction &&
+            _lastSortPriority == _sortPriority) {
         return;
     }
     
-    _lastItemCount = [self.collectionView numberOfItemsInSection:0];
-    _lastSize = self.collectionView.bounds.size;
+    self.lastDirection      = _direction;
+    self.lastSortPriority   = _sortPriority;
+    self.lastItemCount      = [self.collectionView numberOfItemsInSection:0];
+    self.lastSize           = self.collectionView.bounds.size;
     
     // variable naming convention for UICollectionViewScrollDirectionVertical
     CGFloat contentWidth;

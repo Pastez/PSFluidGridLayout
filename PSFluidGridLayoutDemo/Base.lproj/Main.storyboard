@@ -82,6 +82,11 @@
                                             <action selector="translate:" destination="vXZ-lx-hvc" id="zmw-xG-wxt"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="SortBy" id="yhg-6e-cQq">
+                                        <connections>
+                                            <action selector="sortBy:" destination="vXZ-lx-hvc" id="o6h-T9-tX8"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ivP-oP-tcS"/>
                                     <barButtonItem title="Artist Site" id="bkp-om-ag3">
                                         <connections>

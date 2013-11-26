@@ -38,6 +38,8 @@
 @property (copy,nonatomic) NSArray *imagesPaths;
 // used as data source for collection view
 @property (strong,nonatomic) NSArray *images;
+
+@property (readwrite,nonatomic) UICollectionViewScrollDirection direction;
 @property (readwrite,nonatomic) PSFluidGridLayoutSortPriority sortPriority;
 
 @end
@@ -48,7 +50,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.sortPriority = PSFluidGridLayoutSortPriorityIndexPaths;
+    self.direction = UICollectionViewScrollDirectionVertical;
+    self.sortPriority = PSFluidGridLayoutSortPriorityColumnSize;
     
     
     self.collectionView.contentInset = UIEdgeInsetsMake(20, 6, 50, 0);
@@ -124,19 +127,31 @@
 
 - (void)translate:(id)sender
 {
-    PSFluidGridLayout *newLayout = [[PSFluidGridLayout alloc] init];
-    newLayout.direction = _layout.direction == UICollectionViewScrollDirectionVertical ? UICollectionViewScrollDirectionHorizontal : UICollectionViewScrollDirectionVertical;
-    newLayout.constDimension = newLayout.direction == UICollectionViewScrollDirectionVertical ? ITEM_CONST_DIMENSION_VERTICAL : ITEM_CONST_DIMENSION_HORIZONTAL;
-    newLayout.itemInsets = _layout.itemInsets;
-    newLayout.sortPriority = _sortPriority;
-    newLayout.delegate = self;
-    [_collectionView setCollectionViewLayout:newLayout animated:YES];
-    self.layout = newLayout;
+    self.direction = _direction == UICollectionViewScrollDirectionVertical ? UICollectionViewScrollDirectionHorizontal : UICollectionViewScrollDirectionVertical;
+    [self updateLayout];
+}
+
+- (void)sortBy:(id)sender
+{
+    self.sortPriority = _sortPriority == PSFluidGridLayoutSortPriorityIndexPaths ? PSFluidGridLayoutSortPriorityColumnSize : PSFluidGridLayoutSortPriorityIndexPaths;
+    [self updateLayout];
 }
 
 - (void)artistSite:(id)sender
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.kwolek.eu"]];
+}
+
+- (void)updateLayout
+{
+    PSFluidGridLayout *newLayout = [[PSFluidGridLayout alloc] init];
+    newLayout.delegate = self;
+    newLayout.sortPriority = _sortPriority;
+    newLayout.direction = _direction;
+    newLayout.constDimension = newLayout.direction == UICollectionViewScrollDirectionVertical ? ITEM_CONST_DIMENSION_VERTICAL : ITEM_CONST_DIMENSION_HORIZONTAL;
+    newLayout.itemInsets = _layout.itemInsets;
+    [_collectionView setCollectionViewLayout:newLayout animated:YES];
+    self.layout = newLayout;
 }
 
 #pragma mark - PSFluidGridLayout Delegate

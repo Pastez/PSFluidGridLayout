@@ -31,6 +31,7 @@
 - (IBAction)addItem:(id)sender;
 - (IBAction)removeItem:(id)sender;
 - (IBAction)translate:(id)sender;
+- (IBAction)sortBy:(id)sender;
 - (IBAction)artistSite:(id)sender;
 
 @end
