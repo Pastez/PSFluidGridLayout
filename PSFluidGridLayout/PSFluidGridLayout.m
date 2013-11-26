@@ -51,6 +51,7 @@
 
 @property (readwrite,nonatomic) UICollectionViewScrollDirection lastDirection;
 @property (readwrite,nonatomic) PSFluidGridLayoutSortPriority lastSortPriority;
+@property (readwrite,nonatomic) UIEdgeInsets lastItemInsets;
 @property (readwrite,nonatomic) CGSize lastSize;
 @property (readwrite,nonatomic) CGFloat lastScrollPrc;
 
@@ -94,12 +95,14 @@
         if ([self.collectionView numberOfItemsInSection:0] == _lastItemCount &&
         (_lastSize.width == self.collectionView.bounds.size.width && _lastSize.height == self.collectionView.bounds.size.height) &&
             _lastDirection == _direction &&
-            _lastSortPriority == _sortPriority) {
+            _lastSortPriority == _sortPriority &&
+            UIEdgeInsetsEqualToEdgeInsets(_lastItemInsets, _itemInsets)) {
         return;
     }
     
     self.lastDirection      = _direction;
     self.lastSortPriority   = _sortPriority;
+    self.lastItemInsets     = _itemInsets;
     self.lastItemCount      = [self.collectionView numberOfItemsInSection:0];
     self.lastSize           = self.collectionView.bounds.size;
     
@@ -401,5 +404,39 @@
     }
     return size;
 }
+
+#pragma mark - Properties setters
+
+- (void)setDirection:(UICollectionViewScrollDirection)direction
+{
+    _direction = direction;
+    [self invalidateLayout];
+}
+
+- (void)setSortPriority:(PSFluidGridLayoutSortPriority)sortPriority
+{
+    _sortPriority = sortPriority;
+    [self invalidateLayout];
+}
+
+- (void)setConstDimension:(CGFloat)constDimension
+{
+    _constDimension = constDimension;
+    [self invalidateLayout];
+}
+
+- (void)setItemInsets:(UIEdgeInsets)itemInsets
+{
+    _itemInsets = itemInsets;
+    [self invalidateLayout];
+}
+
+- (void)setTopBottomFixed:(BOOL)topBottomFixed
+{
+    _topBottomFixed = topBottomFixed;
+    [self invalidateLayout];
+}
+
+
 
 @end
