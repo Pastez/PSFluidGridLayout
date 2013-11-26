@@ -157,6 +157,7 @@
     PSCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     UIImage *image = [UIImage imageWithContentsOfFile:_images[indexPath.row]];
     cell.imageView.image = image;
+    cell.label.text = [NSString stringWithFormat:@"%d",indexPath.row];
     return cell;
 }
 

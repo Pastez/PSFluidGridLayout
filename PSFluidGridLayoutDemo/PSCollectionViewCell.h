@@ -27,5 +27,6 @@
 @interface PSCollectionViewCell : UICollectionViewCell
 
 @property (assign,nonatomic) IBOutlet UIImageView *imageView;
+@property (assign,nonatomic) IBOutlet UILabel *label;
 
 @end
