@@ -8,11 +8,11 @@ Fluid Grid Layout for UICollectionView
 
 ## Installation
 
-Copy ```PSFluidGridLayout``` directory into your project.
+Copy __```PSFluidGridLayout```__ directory into your project.
 
 ## How to use it
 
-Good place to see how to use it is demo project *(PSFluidGridLayoutDemo)*.
+__Good place to see how to use it is demo project *(PSFluidGridLayoutDemo)*.__
 
 1. Get reference, or create your collection view layout.
 
@@ -50,14 +50,14 @@ Good place to see how to use it is demo project *(PSFluidGridLayoutDemo)*.
 
 #### Other Options
 
-__```sortPriority```__
+ - sortPriority
 
-Defines whats more importent for sorting algorythm. If value is set to ```PSFluidGridLayoutSortPriorityColumnSize``` __(default)__ it trys to make columns *(vertical layout)* / rows *(horizontal layout)* equal size. When set to ```PSFluidGridLayoutSortPriorityIndexPaths``` items are displayed base on them indexPath.
+   Defines whats more importent for sorting algorythm. If value is set to ```PSFluidGridLayoutSortPriorityColumnSize``` __(default)__ it trys to make columns *(vertical layout)* / rows *(horizontal layout)* equal size. When set to ```PSFluidGridLayoutSortPriorityIndexPaths``` items are displayed base on them indexPath.
 
 
-__```topBottomFixed```__
+ - topBottomFixed
 
-If you want to keep top and bottom of columns keep unfixed when offset in bigger or smaller than content size set ```topBottomFixed``` to __NO__.
+   If you want to keep top and bottom of columns keep unfixed when offset in bigger or smaller than content size set ```topBottomFixed``` to __NO__.
 
 ## Demo app image assets
 
