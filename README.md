@@ -50,11 +50,16 @@ Good place to see how to use it is demo project *(PSFluidGridLayoutDemo)*.
 
 #### Other Options
 
+__```sortPriority```__
+
+Defines whats more importent for sorting algorythm. If value is set to ```PSFluidGridLayoutSortPriorityColumnSize``` __(default)__ it trys to make columns *(vertical layout)* / rows *(horizontal layout)* equal size. When set to ```PSFluidGridLayoutSortPriorityIndexPaths``` items are displayed base on them indexPath.
+
+
 __```topBottomFixed```__
 
 If you want to keep top and bottom of columns keep unfixed when offset in bigger or smaller than content size set ```topBottomFixed``` to __NO__.
 
-## Demo image assets
+## Demo app image assets
 
 Demo app uses images form [Aleksandra Kwolek](http://www.kwolek.eu) website.
 

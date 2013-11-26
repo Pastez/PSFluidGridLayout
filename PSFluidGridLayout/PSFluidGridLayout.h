@@ -49,9 +49,7 @@ typedef enum
 /** 
  * Defines whats more importent for sorting algorythm. If value is set to PSFluidGridLayoutSortPriorityColumnSize (default) it
  * trys to make columns(vertical layout)/rows(horizontal layout) equal size (width/height). When set to PSFluidGridLayoutSortPriorityIndexPaths
- * items are displayed base on them indexPath.
- *
- * @Default PSFluidGridLayoutSortPriorityColumnSize
+ * items are displayed base on them indexPath. Default value is PSFluidGridLayoutSortPriorityColumnSize.
  */
 @property (readwrite,nonatomic) PSFluidGridLayoutSortPriority sortPriority;
 
