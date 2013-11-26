@@ -24,6 +24,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum
+{
+    PSFluidGridLayoutSortPriorityColumnSize = 0,
+    PSFluidGridLayoutSortPriorityIndexPaths
+} PSFluidGridLayoutSortPriority;
+
 @class PSFluidGridLayout;
 
 @protocol PSFluidGridLayoutDelegate <NSObject>
@@ -39,6 +45,15 @@
 
 /** The scroll direction of the grid. */
 @property (assign,nonatomic) UICollectionViewScrollDirection direction;
+
+/** 
+ * Defines whats more importent for sorting algorythm. If value is set to PSFluidGridLayoutSortPriorityColumnSize (default) it
+ * trys to make columns(vertical layout)/rows(horizontal layout) equal size (width/height). When set to PSFluidGridLayoutSortPriorityIndexPaths
+ * items are displayed base on them indexPath.
+ *
+ * @Default PSFluidGridLayoutSortPriorityColumnSize
+ */
+@property (readwrite,nonatomic) PSFluidGridLayoutSortPriority sortPriority;
 
 /** The item insets. */
 @property (readwrite,nonatomic) UIEdgeInsets itemInsets;

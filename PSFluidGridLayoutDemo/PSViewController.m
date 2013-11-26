@@ -38,6 +38,7 @@
 @property (copy,nonatomic) NSArray *imagesPaths;
 // used as data source for collection view
 @property (strong,nonatomic) NSArray *images;
+@property (readwrite,nonatomic) PSFluidGridLayoutSortPriority sortPriority;
 
 @end
 
@@ -47,6 +48,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.sortPriority = PSFluidGridLayoutSortPriorityIndexPaths;
+    
     
     self.collectionView.contentInset = UIEdgeInsetsMake(20, 6, 50, 0);
     
@@ -54,6 +57,7 @@
     self.layout.constDimension = ITEM_CONST_DIMENSION_VERTICAL;
     self.layout.direction = SCROLL_DIRECTION;
     self.layout.itemInsets = UIEdgeInsetsMake(1, 1, 1, 1);
+    self.layout.sortPriority = _sortPriority;
     self.layout.delegate = self;
     
     _images = [NSArray array];
@@ -123,7 +127,8 @@
     PSFluidGridLayout *newLayout = [[PSFluidGridLayout alloc] init];
     newLayout.direction = _layout.direction == UICollectionViewScrollDirectionVertical ? UICollectionViewScrollDirectionHorizontal : UICollectionViewScrollDirectionVertical;
     newLayout.constDimension = newLayout.direction == UICollectionViewScrollDirectionVertical ? ITEM_CONST_DIMENSION_VERTICAL : ITEM_CONST_DIMENSION_HORIZONTAL;
-    newLayout.itemInsets = UIEdgeInsetsMake(1, 1, 1, 1);
+    newLayout.itemInsets = _layout.itemInsets;
+    newLayout.sortPriority = _sortPriority;
     newLayout.delegate = self;
     [_collectionView setCollectionViewLayout:newLayout animated:YES];
     self.layout = newLayout;

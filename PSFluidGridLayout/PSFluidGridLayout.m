@@ -120,82 +120,106 @@
     }
     
     /*
-     * 
      * Put index paths to right colums
-     * Sorting items by size
-     *
      */
     NSInteger sectionIdx;
     NSInteger itemIdx;
     self.itemCount = 0;
-    NSMutableArray *indexPathToDimension = [NSMutableArray array];
-    for (sectionIdx = 0; sectionIdx < [self.collectionView numberOfSections]; sectionIdx++) {
-        for (itemIdx = 0; itemIdx < [self.collectionView numberOfItemsInSection:sectionIdx]; itemIdx++)
-        {
-            NSIndexPath *itemIndexPath  = [NSIndexPath indexPathForItem:itemIdx inSection:sectionIdx];
-            CGFloat itemHeight          = [_delegate fluidLayout:self variableDimensionForItemAtIndexPath:itemIndexPath];
-            [indexPathToDimension addObject:@{@"indexPath" : itemIndexPath,
-                                              @"idx" : [NSNumber numberWithInteger:_itemCount],
-                                              @"height" : [NSNumber numberWithFloat:itemHeight]}];
-            _itemCount++;
-        }
-    }
     
-    [indexPathToDimension sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        CGFloat obj1Height = ((NSNumber*)obj1[@"height"]).floatValue;
-        CGFloat obj2Height = ((NSNumber*)obj2[@"height"]).floatValue;
-        if (obj1Height > obj2Height) {
-            return (NSComparisonResult)NSOrderedDescending;
-        }
-        
-        if (obj1Height < obj2Height) {
-            return (NSComparisonResult)NSOrderedAscending;
-        }
-        return (NSComparisonResult)NSOrderedSame;
-    }];
-    
-    for (itemIdx = 0; itemIdx < indexPathToDimension.count; itemIdx++)
+    if (_sortPriority == PSFluidGridLayoutSortPriorityColumnSize)
     {
-        NSInteger destinationColumn = 0;
-        CGFloat destinationColumnHeight = MAXFLOAT;
-        for (NSInteger columnIdx = 0; columnIdx < columnsHeights.count; columnIdx++) {
-            if (destinationColumnHeight > ((NSNumber*)columnsHeights[columnIdx]).floatValue)
+        /*
+         * PSFluidGridLayoutSortPriorityColumnSize
+         * Sorting items by size
+         */
+        NSMutableArray *indexPathToDimension = [NSMutableArray array];
+        for (sectionIdx = 0; sectionIdx < [self.collectionView numberOfSections]; sectionIdx++) {
+            for (itemIdx = 0; itemIdx < [self.collectionView numberOfItemsInSection:sectionIdx]; itemIdx++)
             {
-                destinationColumn = columnIdx;
-                destinationColumnHeight = ((NSNumber*)columnsHeights[columnIdx]).floatValue;
+                NSIndexPath *itemIndexPath  = [NSIndexPath indexPathForItem:itemIdx inSection:sectionIdx];
+                CGFloat itemHeight          = [_delegate fluidLayout:self variableDimensionForItemAtIndexPath:itemIndexPath];
+                [indexPathToDimension addObject:@{@"indexPath" : itemIndexPath,
+                                                  @"idx" : [NSNumber numberWithInteger:_itemCount],
+                                                  @"height" : [NSNumber numberWithFloat:itemHeight]}];
+                _itemCount++;
             }
         }
         
-        NSIndexPath *itemIndexPath = indexPathToDimension[itemIdx][@"indexPath"];
-        
-        CGFloat itemHeight = [_delegate fluidLayout:self variableDimensionForItemAtIndexPath:itemIndexPath];
-        CGFloat columnHeight = ((NSNumber*)columnsHeights[destinationColumn]).floatValue;
-        columnsHeights[destinationColumn] = [NSNumber numberWithFloat:itemHeight + columnHeight];
-        [((NSMutableArray*)columns[destinationColumn]) addObject:itemIndexPath];
-    }
-    
-    /*
-     *
-     * Sorts items in colums
-     *
-     */
-    
-    for (NSInteger columnIdx = 0; columnIdx < columns.count; columnIdx++ )
-    {
-        NSMutableArray *column = columns[ columnIdx ];
-        [column sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        [indexPathToDimension sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            CGFloat obj1Height = ((NSNumber*)obj1[@"height"]).floatValue;
+            CGFloat obj2Height = ((NSNumber*)obj2[@"height"]).floatValue;
+            if (obj1Height > obj2Height) {
+                return (NSComparisonResult)NSOrderedDescending;
+            }
             
-            NSIndexPath *obj1IndexPath = obj1;
-            NSIndexPath *obj2IndexPath = obj2;
-            
-            if( obj1IndexPath.section > obj2IndexPath.section ) return NSOrderedDescending; else
-                if (obj1IndexPath.section < obj2IndexPath.section) return NSOrderedAscending; else
-                {
-                    if (obj1IndexPath.row > obj2IndexPath.row) return NSOrderedDescending; else
-                        if (obj1IndexPath.row < obj1IndexPath.row) return NSOrderedAscending;
-                }
-            return NSOrderedSame;
+            if (obj1Height < obj2Height) {
+                return (NSComparisonResult)NSOrderedAscending;
+            }
+            return (NSComparisonResult)NSOrderedSame;
         }];
+        
+        for (itemIdx = 0; itemIdx < indexPathToDimension.count; itemIdx++)
+        {
+            NSInteger destinationColumn = 0;
+            CGFloat destinationColumnHeight = MAXFLOAT;
+            for (NSInteger columnIdx = 0; columnIdx < columnsHeights.count; columnIdx++) {
+                if (destinationColumnHeight > ((NSNumber*)columnsHeights[columnIdx]).floatValue)
+                {
+                    destinationColumn = columnIdx;
+                    destinationColumnHeight = ((NSNumber*)columnsHeights[columnIdx]).floatValue;
+                }
+            }
+            
+            NSIndexPath *itemIndexPath = indexPathToDimension[itemIdx][@"indexPath"];
+            
+            CGFloat itemHeight = [_delegate fluidLayout:self variableDimensionForItemAtIndexPath:itemIndexPath];
+            CGFloat columnHeight = ((NSNumber*)columnsHeights[destinationColumn]).floatValue;
+            columnsHeights[destinationColumn] = [NSNumber numberWithFloat:itemHeight + columnHeight];
+            [((NSMutableArray*)columns[destinationColumn]) addObject:itemIndexPath];
+        }
+        
+        /*
+         * Sorts items in colums
+         */
+        
+        for (NSInteger columnIdx = 0; columnIdx < columns.count; columnIdx++ )
+        {
+            NSMutableArray *column = columns[ columnIdx ];
+            [column sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                
+                NSIndexPath *obj1IndexPath = obj1;
+                NSIndexPath *obj2IndexPath = obj2;
+                
+                if( obj1IndexPath.section > obj2IndexPath.section ) return NSOrderedDescending; else
+                    if (obj1IndexPath.section < obj2IndexPath.section) return NSOrderedAscending; else
+                    {
+                        if (obj1IndexPath.row > obj2IndexPath.row) return NSOrderedDescending; else
+                            if (obj1IndexPath.row < obj1IndexPath.row) return NSOrderedAscending;
+                    }
+                return NSOrderedSame;
+            }];
+        }
+        
+    }
+    else if (_sortPriority == PSFluidGridLayoutSortPriorityIndexPaths)
+    {
+        /*
+         * PSFluidGridLayoutSortPriorityIndexPaths
+         * Sorting items by indexPath.row
+         */
+        NSInteger destinationColumn = 0;
+        for (sectionIdx = 0; sectionIdx < [self.collectionView numberOfSections]; sectionIdx++) {
+            for (itemIdx = 0; itemIdx < [self.collectionView numberOfItemsInSection:sectionIdx]; itemIdx++)
+            {
+                NSIndexPath *itemIndexPath  = [NSIndexPath indexPathForItem:itemIdx inSection:sectionIdx];
+                [((NSMutableArray*)columns[destinationColumn]) addObject:itemIndexPath];
+                destinationColumn++;
+                if (destinationColumn == columnCount) {
+                    destinationColumn = 0;
+                }
+            }
+        }
+        
     }
     
     /*
